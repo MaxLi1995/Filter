@@ -75,7 +75,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = b;
                 image[i][j].rgbtBlue =c;
             }
-            else if (i == height && j == 0)
+            else if (i == height - 1 && j == 0)
             {
                 int a = round((copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j + 1].rgbtRed + copy[i][j].rgbtRed)/4);
                 int b = round((copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i][j].rgbtGreen)/4);
@@ -84,7 +84,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = b;
                 image[i][j].rgbtBlue = c;
             }
-            else if (i == 0 && j == width)
+            else if (i == 0 && j == width - 1)
             {
                 int a = round((copy[i][j - 1 ].rgbtRed + copy[i + 1 ][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
                 int b = round((copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
@@ -93,7 +93,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = b;
                 image[i][j].rgbtBlue = c;
             }
-            else if (i == height && j == width)
+            else if (i == height - 1 && j == width - 1)
             {
                 int a = round((copy[i][j - 1].rgbtRed + copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
                 int b = round((copy[i][j - 1].rgbtGreen + copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
@@ -126,7 +126,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = b;
                 image[i][j].rgbtBlue = c;
             }
-            else if (i == height)
+            else if (i == height - 1)
             {
                 int a = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j - 1].rgbtRed
                 + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed)/6);
@@ -138,7 +138,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[i][j].rgbtGreen = b;
                 image[i][j].rgbtBlue = c;
             }
-            else if (j == width)
+            else if (j == width - 1)
             {
                 int a = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j - 1].rgbtRed + copy[i + 1][j - 1].rgbtRed
                 + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/6);
