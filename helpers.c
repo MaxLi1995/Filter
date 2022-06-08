@@ -68,72 +68,99 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             if (i == 0 && j == 0)
             {
-                image[i][j].rgbtRed = round((copy[i][j + 1].rgbtRed + copy[i + 1][j + 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
-                image[i][j].rgbtGreen = round((copy[i][j + 1].rgbtGreen + copy[i+1][j + 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
-                image[i][j].rgbtBlue = round((copy[i][j + 1].rgbtBlue + copy[i + 1][j + 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                int a = round((copy[i][j + 1].rgbtRed + copy[i + 1][j + 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
+                int b = round((copy[i][j + 1].rgbtGreen + copy[i+1][j + 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
+                int c = round((copy[i][j + 1].rgbtBlue + copy[i + 1][j + 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue =c;
             }
             else if (i == height && j == 0)
             {
-                image[i][j].rgbtRed = round((copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j + 1].rgbtRed + copy[i][j].rgbtRed)/4);
-                image[i][j].rgbtGreen = round((copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i][j].rgbtGreen)/4);
-                image[i][j].rgbtBlue = round((copy[i - 1][j].rgbtBlue + copy[i- 1][j + 1].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                int a = round((copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j + 1].rgbtRed + copy[i][j].rgbtRed)/4);
+                int b = round((copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i][j].rgbtGreen)/4);
+                int c = round((copy[i - 1][j].rgbtBlue + copy[i- 1][j + 1].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (i == 0 && j == width)
             {
-                image[i][j].rgbtRed = round((copy[i][j - 1 ].rgbtRed + copy[i + 1 ][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
-                image[i][j].rgbtGreen = round((copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
-                image[i][j].rgbtBlue = round((copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                int a = round((copy[i][j - 1 ].rgbtRed + copy[i + 1 ][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
+                int b = round((copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
+                int c = round((copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (i == height && j == width)
             {
-                image[i][j].rgbtRed = round((copy[i][j - 1].rgbtRed + copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
-                image[i][j].rgbtGreen = round((copy[i][j - 1].rgbtGreen + copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
-                image[i][j].rgbtBlue = round((copy[i][j - 1].rgbtBlue + copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                int a = round((copy[i][j - 1].rgbtRed + copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j].rgbtRed)/4);
+                int b = round((copy[i][j - 1].rgbtGreen + copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i][j].rgbtGreen)/4);
+                int c = round((copy[i][j - 1].rgbtBlue + copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i][j].rgbtBlue)/4);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (i == 0)
             {
-                image[i][j].rgbtRed = round((copy[i][j - 1].rgbtRed + copy[i + 1][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j + 1].rgbtRed
+                int a = round((copy[i][j - 1].rgbtRed + copy[i + 1][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i][j + 1].rgbtRed
                 + copy[i + 1][j + 1].rgbtRed + copy[i][j].rgbtRed)/6);
-                image[i][j].rgbtGreen = round((copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j + 1].rgbtGreen
+                int b = round((copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i][j + 1].rgbtGreen
                 + copy[i + 1][j + 1].rgbtGreen + copy[i][j].rgbtGreen)/6);
-                image[i][j].rgbtBlue = round((copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j + 1].rgbtBlue
+                int c = round((copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i][j + 1].rgbtBlue
                 + copy[i + 1][j + 1].rgbtBlue + copy[i][j].rgbtBlue)/6);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (j == 0)
             {
-                image[i][j].rgbtRed = round((copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j + 1].rgbtRed + copy[i + 1][j].rgbtRed
+                int a = round((copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j + 1].rgbtRed + copy[i + 1][j].rgbtRed
                 + copy[i + 1][j + 1].rgbtRed + copy[i][j].rgbtRed)/6);
-                image[i][j].rgbtGreen = round((copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i + 1][j].rgbtGreen
+                int b = round((copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i + 1][j].rgbtGreen
                 + copy[i + 1][j + 1].rgbtGreen + copy[i][j].rgbtGreen)/6);
-                image[i][j].rgbtBlue = round((copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i + 1][j].rgbtBlue
+                int c = round((copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i + 1][j].rgbtBlue
                 + copy[i + 1][j + 1].rgbtBlue + copy[i][j].rgbtBlue)/6);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (i == height)
             {
-                image[i][j].rgbtRed = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j - 1].rgbtRed
+                int a = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j - 1].rgbtRed
                 + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed)/6);
-                image[i][j].rgbtGreen = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j - 1].rgbtGreen
+                int b = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j - 1].rgbtGreen
                 + copy[i][j].rgbtGreen + copy[i][j + 1].rgbtRed)/6);
-                image[i][j].rgbtBlue = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j - 1].rgbtBlue
+                int c = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j - 1].rgbtBlue
                 + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtRed)/6);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else if (j == width)
             {
-                image[i][j].rgbtRed = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j - 1].rgbtRed + copy[i + 1][j - 1].rgbtRed
+                int a = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i][j - 1].rgbtRed + copy[i + 1][j - 1].rgbtRed
                 + copy[i + 1][j].rgbtRed + copy[i][j].rgbtRed)/6);
-                image[i][j].rgbtGreen = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen
+                int b = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i][j - 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen
                 + copy[i + 1][j].rgbtGreen + copy[i][j].rgbtGreen)/6);
-                image[i][j].rgbtBlue = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue
+                int c = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i][j - 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue
                 + copy[i + 1][j].rgbtBlue + copy[i][j].rgbtBlue)/6);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
             else
             {
-                image[i][j].rgbtRed = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j - 1].rgbtRed
+                int a = round((copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed + copy[i][j - 1].rgbtRed
                 + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed + copy[i + 1][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i + 1][j + 1].rgbtRed)/9);
-                image[i][j].rgbtGreen = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j - 1].rgbtGreen
+                int b = round((copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen + copy[i][j - 1].rgbtGreen
                 + copy[i][j].rgbtGreen + copy[i][j + 1].rgbtGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i + 1][j + 1].rgbtGreen)/9);
-                image[i][j].rgbtBlue = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j - 1].rgbtBlue
+                int c = round((copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue + copy[i][j - 1].rgbtBlue
                 + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i + 1][j + 1].rgbtBlue)/9);
+                image[i][j].rgbtRed = a;
+                image[i][j].rgbtGreen = b;
+                image[i][j].rgbtBlue = c;
             }
         }
     }
